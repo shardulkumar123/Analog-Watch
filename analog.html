@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="analog.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+    <title>Analog clock</title>
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        #clockcontainer {
+    position: relative;
+    margin: auto;
+    height: 40vw;
+    width: 40vw;
+    background: url(aclock.png) no-repeat;
+    background-size: 100%;
+}
+
+#hours,
+#minutes,
+#seconds {
+    position: absolute;
+    background: black;
+    border-radius: 10px;
+    transform-origin: bottom;
+}
+
+#hours {
+    height: 23%;
+    width: 1.2%;
+    top: 27.1%;
+    right: 49.5%;
+    opacity: 0.8;
+}
+#minutes {
+    height: 32%;
+    width: 1%;
+    top: 18.2%;
+    right: 49.5%;
+    opacity: 0.7;
+    }
+#seconds{
+    height: 41%;
+    width: 1%;
+    top: 9.2%;
+    right: 49.5%;
+    opacity: 0.9;
+}
+/* this css for styling the text  */
+#brand{
+    text-align: center;
+    color: rgba(50, 121, 109, 0.788);
+}
+.container{
+    font-family: "Trirong", serif;
+    /* display: block; */
+    font-size: 30px;
+    margin: 0px;
+    padding: 8px;
+    color: rgb(179, 175, 175);
+    background-color: rgb(9 33 46);
+    text-align: center;
+}
+body{
+    background-color: coral;
+}
+#footer{
+    /* display: block; */
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    background-color: rgb(9 33 46);
+    color: white;
+}
+    </style>
+</head>
+
+<body>
+    <!-- <div class="container">
+        <h1 id= brand>Analog Clock</h1>
+        <p>This is made by SHARDUL KUMAR with the help of html css and java script</p>
+    </div> -->
+    <header class="container">
+        <h1>Analog Watch</h1>
+    </header>
+    <div id="clockcontainer">
+        <div id="hours"></div>
+        <div id="minutes"></div>
+        <div id="seconds"></div>
+    </div>
+    <footer class="fixed-bottom" id="footer">
+        <p>Copyright &copy; 2021 Shardul Kumar</p>
+        
+    </footer>
+    <script>
+        setInterval(() => {
+    d = new Date();
+    htime = d.getHours();
+    mtime = d.getMinutes();
+    stime = d.getSeconds();
+    hrotation = 30 * htime + mtime / 2;
+    mrotation = 6 * mtime;
+    srotation = 6 * stime;
+    hours.style.transform = `rotate(${hrotation}deg)`;
+    minutes.style.transform = `rotate(${mrotation}deg)`;
+    seconds.style.transform = `rotate(${srotation}deg)`;
+}, 1000);
+    </script>
+</body>
+
+</html>
